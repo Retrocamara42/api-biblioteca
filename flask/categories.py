@@ -2,10 +2,17 @@ from flask_restful import Resource
 from flask import Response, jsonify
 
 
-categorias=["Ciencias de la Tierra","Economia","Ciencias Politicas","Derecho",
-"Informatica","Astronomia","Literatura Universal","Arte y Diseño"]
+categorias={
+    "Categoria1":"Ciencias de la Tierra",
+    "Categoria2":"Economia",
+    "Categoria3":"Ciencias Politicas",
+    "Categoria4":"Derecho",
+    "Categoria5":"Informatica",
+    "Categoria6":"Astronomia",
+    "Categoria7":"Literatura Universal",
+    "Categoria8":"Arte y Diseño"
+    }
 
 class categories(Resource):
     def get(self):
-        #return {'categorias': [i for i in categorias]}
-        return  {'categorias':categorias}
+        return  categorias

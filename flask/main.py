@@ -10,6 +10,14 @@ from categories import categories
 app = Flask(__name__)
 api = Api(app)
 
+categorias=["Ciencias de la Tierra","Economia","Ciencias Politicas","Derecho",
+"Informatica","Astronomia","Literatura Universal","Arte y Diseño"]
+
+class categories(Resource):
+    def get(self):
+        print(categorias)
+        print({'categorias':categorias})
+        return  {'categorias':categorias}
 
 api.add_resource(list_authors, '/author')
 api.add_resource(list_books, '/book')
@@ -19,4 +27,4 @@ api.add_resource(categories, '/categorias')
 
 
 if __name__ == '__main__':
-     app.run(port='5000')
+     app.run(debug=True,port='5000')
